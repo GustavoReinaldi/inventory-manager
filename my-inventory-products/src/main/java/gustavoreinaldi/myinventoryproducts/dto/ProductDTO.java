@@ -1,6 +1,5 @@
 package gustavoreinaldi.myinventoryproducts.dto;
 
-import gustavoreinaldi.myinventoryproducts.collections.ProductDocument;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,10 +19,17 @@ public class ProductDTO {
     private String brand;
     private String model;
     private String color;
-    private ProductDocument.Dimensions dimensions;
+    private Dimensions dimensions;
     private String size;
     private String capacity;
     private String category;
     private Date creationDate;
-
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public class Dimensions {
+        private double height;
+        private double width;
+        private double length;
+    }
 }
